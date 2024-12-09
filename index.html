@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Examination 2025 - RESULT</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 50px;
+            height: 30px;
+        }
+        h1 {
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .brought-by {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .toggle-nav {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .announcement {
+            margin-bottom: 15px;
+        }
+        .announcement a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .announcement p {
+            margin: 5px 0;
+            color: #0066cc;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="header">
+            <img src="https://mahresult.nic.in/img/graduationhatsmall.gif" alt="Graduation Cap" class="logo">
+            <h1>Maharashtra Examination 2025 - RESULT</h1>
+            <div class="brought-by">
+                <img src="https://mahresult.nic.in/img/icon01.gif" alt="Exams Results India Logo" style="width: 100px; vertical-align: middle;">
+                Brought to you by: <a href="#">NATIONAL INFORMATICS CENTRE</a>
+            </div>
+        </div>
+
+        <a href="#" class="toggle-nav" @click="toggleNavigation">Toggle navigation</a>
+
+        <div class="section">
+            <h2 v-if="announcement">Latest Announcement</h2>
+            <div class="announcement" v-if="announcement">
+                <a :href="announcement.link" target="_blank">{{ announcement.title }}</a>
+                <p>{{ announcement.date }}</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Designed, Developed and Hosted by National Informatics Centre
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    announcement: null
+                };
+            },
+            mounted() {
+                // Simulate content fetching for faster page load
+                setTimeout(() => {
+                    this.announcement = {
+                        title: "HSC Examination July - 2025 RESULT",
+                        link: "http://mahresult.c0m.in/hsc2025.php",
+                        date: "Announced on August 23rd, 2025 at 13:00 Hrs."
+                    };
+                }, 200); // Simulate slight delay to mimic faster fetch
+            },
+            methods: {
+                toggleNavigation() {
+                    alert("Navigation toggled!");
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
